@@ -14,11 +14,10 @@ print(page.status_code) # agar 200 bolsa demak sahifa yuklanyapti
 # print(page.text) 
 soup = BeautifulSoup(page.text, "html.parser")
 all_images = soup.find_all("img")
-print(all_images)
+
 count = 0
 for img in all_images:
-    print(img.get("src"))
-    src = img.get("src")  # Безопасное получение src
+    src = img.get("src")  
     if src and src.startswith("http"):
         file_path = f"img_{count}.png"
         try:
