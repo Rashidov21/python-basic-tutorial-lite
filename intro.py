@@ -68,3 +68,70 @@
 # import keyword
 # print(keyword.kwlist)
 # ['False', 'None', 'True', 'and', 'as', 'assert', 'async', 'await', 'break', 'class', 'continue', 'def', 'del', 'elif', 'else', 'except', 'finally', 'for', 'from', 'global', 'if', 'import', 'in', 'is', 'lambda', 'nonlocal', 'not', 'or', 'pass', 'raise', 'return', 'try', 'while', 'with', 'yield']
+
+# if , elif , else
+
+# if - agar 
+# elif - aks holda yoki  
+# else - aks holda
+
+# name = input("Ismingizni kiriting: ")
+# if name:
+#     print(f"Xush kelibsiz {name}")
+#     # f - string format "" {o'zgaruvchi}
+# else:
+#     print("Iltimos ismingizni kiriting")
+
+
+
+# and - va 
+# if age and age > 18:
+#     print("Xush kelibsiz")
+    
+# or - yoki
+
+# if age or age > 18:
+#     print("Xush kelibsiz")
+    
+# elif age == 18:
+#     print("Xush kelibsiz")
+    
+# else:
+#     print("Sizning yoshingiz 18 dan kichik")
+
+# match case - 
+# age = int(input())
+
+# match age: # ozgaruvchi 
+#     case 18:
+#         print("Xush kelibsiz")
+#     case _ if age > 18:
+#         print(f"Xush kelibsiz sizning yoshingiz 18 dan katta")
+#     case _ if age == 18:
+#         print("Xush kelibsiz sizning yoshingiz 18")
+#     case _:
+#         print("Sizning yoshingiz 18 dan kichik")
+
+# 🧩 3-mashq: Oy nomiga qarab faslni aniqlash
+
+# 🔹 Foydalanuvchi oy nomini kiritadi (mart, dekabr, avgust va h.k.). Siz faslni aniqlang: bahor, yoz, kuz, yoki qish.
+
+# input: oy nomi
+# output: fasl nomi
+
+# 2. Foydalanovchini parolini uzunligini tekshiring agar 6 bekgidan dan katta bolsa "Parol muvaffaqiyatli saqlandi" aks holda "Iltimos parol 6 dan katta bolishi shart" xabar chiqsin
+
+# input: parol
+# output: "Parol muvaffaqiyatli saqlandi" aks holda "Iltimos parol 6 dan katta bolishi shart"
+
+# len() - uzunligini aniqlash
+# in - mavjudligini tekshiradi 
+# not in - mavjud emasligini tekshiradi
+
+# Uyga vazifa 
+
+# Telefon raqamini tekshiring (90,91)
+# agar 93 50 94 operator - bolsa Ucel 
+# 77 lik 88 Uzmobile  
+# 91 90 Beeline  
+
