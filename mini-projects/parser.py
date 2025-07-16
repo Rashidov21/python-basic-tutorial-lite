@@ -26,4 +26,4 @@ for img in all_images:
             count += 1
         except Exception as download_error:
             print(f"\nОшибка при загрузке {src}: {download_error}")
-        
+         
