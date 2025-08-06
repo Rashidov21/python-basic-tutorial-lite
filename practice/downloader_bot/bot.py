@@ -28,15 +28,17 @@ def handle(msg):
     text = msg['text'].strip()
 
     if text == "/start":
+        bot.sendMessage(chat_id, "Instagram yoki Youtube video uchun link yuboring")
         bot.sendMessage(chat_id, "Киньте ссылку на Ютуб или Инстаграм видео")
         return
 
     if not text.startswith("http"):
-        bot.sendMessage(chat_id, "Пожалуйста киньте правильную ссылку")
+        bot.sendMessage(chat_id, "Iltimos to'g'ri link yuboring !")
+        bot.sendMessage(chat_id, "Пожалуйста киньте правильную ссылку !")
         return
 
     try:
-        bot.sendMessage(chat_id, "Загружается...")
+        bot.sendMessage(chat_id, "Yuklanmoqda ... | Загружается...")
 
         if "youtube.com" in text or "youtu.be" in text:
             yt = YouTube(text)
@@ -53,15 +55,19 @@ def handle(msg):
             if files:
                 file_path = os.path.join(folder_path, files[0])
             else:
+                bot.sendMessage(chat_id, "Hech qanday video topilmadi.")
                 bot.sendMessage(chat_id, "Не нашлось никакое видео.")
                 return
 
         else:
+            bot.sendMessage(chat_id, "Men faqat Youtube yoki Instagram link qabul qilaman.")
             bot.sendMessage(chat_id, "Может принимать только Ютуб или Инстаграм ссылку.")
             return
 
         with open(file_path, 'rb') as f:
             bot.sendVideo(chat_id, f)
+            bot.sendMessage(chat_id,"Bot Geeks Andijan o'quvchilari tomonidan tayyorlangan !")
+            bot.sendMessage(chat_id,"Dasturlashni mukammal o'rganmoqchi bo'lsangiz, @geeks_support ga yozing !")
 
         # Faylni o‘chirish
         if os.path.exists(file_path):
@@ -71,6 +77,7 @@ def handle(msg):
             shutil.rmtree(os.path.join(TEMP_DIR, "insta_temp"), ignore_errors=True)
 
     except Exception as e:
+        bot.sendMessage(chat_id, f"Xatolik yuz berdi:\n{e}")
         bot.sendMessage(chat_id, f"Произошла ошибка:\n{e}")
 
 bot.message_loop(handle)
